@@ -1,0 +1,10 @@
+pipeline {
+  agent any
+  stages {
+    stage('Testing commits'){
+      steps{
+        echo 'Commit triggers are possible'
+      }
+    }
+  }
+}

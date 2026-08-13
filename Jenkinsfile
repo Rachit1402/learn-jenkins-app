@@ -35,13 +35,17 @@ pipeline {
           sh 'npm --version'
         }
      }
-     stage('Printing current directory and its contents'){
-       steps{
-         echo 'Printing the current directory'
-         sh 'pwd'
-         echo 'Printing files and folder present there'
-         echo 'ls -la'
-       }
-     }
+    //  stage('Printing current directory and its contents'){
+    //    steps{
+    //      echo 'Printing the current directory'
+    //      sh 'pwd'
+    //      echo 'Printing files and folder present there'
+    //      echo 'ls -la'
+    //    }
+    //  }
+    stage('Downloading and installing all the npm packages'){
+       echo 'downloading and installing all the npm packages and dependencies'
+       sh 'npm install'
+    }
    }
 }

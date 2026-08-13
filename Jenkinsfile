@@ -44,8 +44,10 @@ pipeline {
     //    }
     //  }
     stage('Downloading and installing all the npm packages'){
-       echo 'downloading and installing all the npm packages and dependencies'
-       sh 'npm install'
+       steps{
+        echo 'downloading and installing all the npm packages and dependencies'
+        sh 'npm install'
+       }
     }
    }
 }

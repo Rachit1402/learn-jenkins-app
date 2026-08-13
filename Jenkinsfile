@@ -1,12 +1,47 @@
+// pipeline {
+//     agent any
+    
+//   stages {
+//     stage('Docker run npm'){
+//         steps {
+//             echo 'running node:18-alpine docker image'
+//             sh 'docker run node:18-alpine'
+//             }
+//         }
+//     stage('Installing npm packages and dependencies'){
+//         steps{
+//             echo 'Installing npm packages'
+//             sh 'npm install'
+//             echo 'Npm packages have been installed successfully'
+//             }
+//           }
+//     stages('Building project'){
+//         steps{
+//             echo 'Initiating the project build'
+//             sh 'npm run build'
+//             echo 'Project has been build successfully. Build folder should be available now'
+//             }
+//         }}
+
+
+
 pipeline {
    agent any
    stages{
-    stage('Testing commit trigger'){
+     stage('Testing commit trigger'){
+        steps{
+          echo 'Triggering from SCM'
+          sh 'node --version'
+          sh 'npm --version'
+        }
+     }
+     stage('Printing current directory and its contents'){
        steps{
-         echo 'Triggering from SCM'
-         sh 'node --version'
-         sh 'npm --version'
+         echo 'Printing the current directory'
+         sh 'pwd'
+         echo 'Printing files and folder present there'
+         echo 'ls -la'
        }
-    }
+     }
    }
 }

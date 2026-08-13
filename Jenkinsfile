@@ -49,5 +49,12 @@ pipeline {
         sh 'npm install'
        }
     }
+    stage('Building project'){
+      steps(
+        echo 'Initiating npm project build'
+        sh 'npm run build'
+        echo 'Build has been created successfully'
+      )
+    }
    }
 }

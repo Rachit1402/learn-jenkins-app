@@ -50,11 +50,11 @@ pipeline {
        }
     }
     stage('Building project'){
-      steps(
+      steps{
         echo 'Initiating npm project build'
         sh 'npm run build'
         echo 'Build has been created successfully'
-      )
+      }
     }
    }
 }

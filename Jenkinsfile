@@ -56,5 +56,9 @@ pipeline {
         echo 'Build has been created successfully'
       }
     }
+    stage('Running tests'){
+       echo 'Running tests on to see if index.html file exists or not'
+       sh 'test -f build/index.html'
+    }
    }
 }
